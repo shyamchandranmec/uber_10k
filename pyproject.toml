@@ -1,0 +1,15 @@
+[project]
+name = "uber-10k-chatbot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dotenv>=0.9.9",
+    "llama-index-agent-openai>=0.4.6",
+    "llama-index-embeddings-openai>=0.3.1",
+    "llama-index-llms-openai>=0.3.33",
+    "llama-index-question-gen-openai>=0.3.0",
+    "llama-index-readers-file>=0.4.7",
+    "unstructured>=0.17.2",
+]
