@@ -95,10 +95,20 @@ async def main():
     llm = OpenAI(model="gpt-4o-mini")
     agent = FunctionAgent(tools=tools, llm=llm, verbose=True)
     ctx = Context(agent)
+
     response = await agent.run("What is the revenue for Uber in 2022?", ctx=ctx)
     print(str(response))
-    response = await agent.run("How does it compare with 2019?", ctx=ctx)
+    """response = await agent.run("How does it compare with 2019?", ctx=ctx)
     print(str(response))
+    response = await agent.run("Compare/Contrast the risk factors described in the uber 10-k across the years. Give me answer in bullet points  ", ctx=ctx)
+    print(str(response))
+    """
+    while True:
+        user_input = input("User: ")
+        if user_input == "exit":
+            break   
+        response = await agent.run(user_input, ctx=ctx)
+        print(str(response))
 if __name__ == "__main__":
     asyncio.run(main())
 
